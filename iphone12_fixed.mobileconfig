@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 1: СЕНСОРЫ И ЖЕСТЫ                          -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Touch Engine</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.touch.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>A1111111-1111-1111-1111-111111111111</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.Accessibility</key>
+				<dict>
+					<key>TouchAccommodationsEnabled</key>
+					<true/>
+					<key>TouchAccommodationsHoldDuration</key>
+					<real>0.001</real>
+					<key>TouchAccommodationsTapAssistanceEnabled</key>
+					<true/>
+					<key>TouchAccommodationsTapAssistanceTimeout</key>
+					<real>0.0005</real>
+					<key>TouchAccommodationsHoldDurationEnabled</key>
+					<true/>
+				</dict>
+				<key>com.apple.AssistiveTouch</key>
+				<dict>
+					<key>AssistiveTouchEnabled</key>
+					<true/>
+					<key>AssistiveTouchCustomGestures</key>
+					<array>
+						<dict>
+							<key>GestureName</key>
+							<string>FF_AimLock_Activate</string>
+							<key>GestureFingers</key>
+							<integer>2</integer>
+							<key>GestureTaps</key>
+							<integer>1</integer>
+							<key>GestureAction</key>
+							<string>com.aimlock.ff.activateaim</string>
+						</dict>
+						<dict>
+							<key>GestureName</key>
+							<string>FF_AimLock_HeadPriority</string>
+							<key>GestureFingers</key>
+							<integer>3</integer>
+							<key>GestureTaps</key>
+							<integer>1</integer>
+							<key>GestureAction</key>
+							<string>com.aimlock.ff.headshotprio</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 2: GPU METAL                                -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Metal Engine</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.metal.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>B2222222-2222-2222-2222-222222222222</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.metal</key>
+				<dict>
+					<key>MetalCaptureEnabled</key>
+					<true/>
+					<key>MetalFrameCaptureEnabled</key>
+					<true/>
+					<key>MetalShaderValidationEnabled</key>
+					<false/>
+					<key>MetalGPUPriority</key>
+					<integer>2</integer>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 3: VPN (БЕЗ ПРИВЯЗКИ К СЕРТИФИКАТУ)         -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock AntiBan VPN</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.vpn.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed</string>
+			<key>PayloadUUID</key>
+			<string>C3333333-3333-3333-3333-333333333333</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>UserDefinedName</key>
+			<string>FF AimLock AntiBan</string>
+			<key>VPNType</key>
+			<string>VPN</string>
+			<key>VPNSubType</key>
+			<string>com.aimlock.ff.vpn</string>
+			<key>VPN</key>
+			<dict>
+				<key>AuthName</key>
+				<string>GarenaFF.AntiCheat</string>
+				<key>AuthenticationMethod</key>
+				<string>SharedSecret</string>
+				<key>SharedSecret</key>
+				<string>FFAimLock2024SecureBypassKey</string>
+				<key>RemoteAddress</key>
+				<string>127.0.0.1</string>
+				<key>ProviderType</key>
+				<string>app-proxy</string>
+				<key>OnDemandEnabled</key>
+				<integer>1</integer>
+				<key>OnDemandRules</key>
+				<array>
+					<dict>
+						<key>Action</key>
+						<string>EvaluateConnection</string>
+						<key>InterfaceTypeMatch</key>
+						<string>WiFi</string>
+						<key>URLStringProbe</key>
+						<string>https://garena.com/ff/anticheat</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 4: DYLD INJECTION                            -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock DYLD Hook</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.dyld.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>E5555555-5555-5555-5555-555555555555</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.dyld</key>
+				<dict>
+					<key>DYLD_INSERT_LIBRARIES</key>
+					<string>/var/mobile/Library/Application Support/FFAimLock/aimlock_core.dylib</string>
+					<key>DYLD_FORCE_FLAT_NAMESPACE</key>
+					<true/>
+					<key>DYLD_SHARED_REGION</key>
+					<string>private</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 5: СЕРТИФИКАТ PEM С ВАЛИДНОЙ СТРУКТУРОЙ      -->
+		<!-- ПОЛНЫЙ X.509 СЕРТИФИКАТ В BASE64 (DER)               -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock PEM Certificate</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.pem.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.security.pem</string>
+			<key>PayloadUUID</key>
+			<string>D4444444-4444-4444-4444-444444444444</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadCertificateFileName</key>
+			<string>aimlock_ff_cert.pem</string>
+			<key>PayloadContent</key>
+			<data>
+LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZhekNDQTFPZ0F3SUJBZ0lVUlQ3ZkhWUWhQ
+R3hKR05KRnFQZlFjV2tZZCtRd0RRWUpLb1pJaHZjTkFRRUwKQlFBd1JURUxNQWtHQTFVRUJoTUNW
+Vk16RXpBUkJnTlZCQWdNQ2tOaGJHbG1iM0p1YVdFeEVqQVFCZ05WQkFvTQpDVUZwYlV4dlkyd2dS
+a1l4RFRBTEJnTlZCQU1NQkZKdmIzUXdIaGNOTWpRd01UQXhNREF3TURBd1doY05NelF3TVRBeApN
+REF3TURBd1dqQkZNUXN3Q1FZRFZRUUdFd0pWVXpFVE1CRUdBMVVFQ0F3S1EyRnNhV1p2Y201cFlU
+RVNNQkFHCkJnTlZCQW9NQ1VGcGJVeHZZMndnUmtZeERUQUxCZ05WQkFNTUJGSm1iM1F3Z2dJaU1B
+UUdDU3FHU0liM0RRRUIKQVFVQUE0SUNEd0F3Z2dJS0FvSUNBUUJBS2pBc0VnU1BoTUJGWW5PMmhM
+T1dKNnZSUlJWNWNBWjFKc1d6NG9BU29DZApQREVQa2tIbk5TdEpxTHpHUEV5UHI2aGZMSENId0po
+S3ZvN0MvSWZGRGFFQndpaG9SMnI2cnBiMlBMMUV2b3prCmF4UkxhQ2s1TGkzbnNLSmNYTDNxNEVE
+eE9odmhwaTErQjFEMGpnUVBHRDcrRWNDaFBNMFR3bFYzbUI1dXFnNFIKOVBmZFlVdDAya2pqMU1M
+ZDdzNUt1OUJXa2p3dnRGL0hOUVMzWGVmcGVUL2syUDVnZUtKQzVIVFo4SWFGMGNySwpCUWlGTFhP
+VWl4VW5nS0o0MTFnVE05Rmt0MmRSK1FuTTRySjlUdEpWQ28zNm5SVkRPVmk5T2MyMFFoU1pOWTVz
+CktEb0FpS2d2bWw3QUFFNlBlS1QxSVRCT2JxVWh4OU5BdklIOU1tcFhRNXh5SGRLUmt0eHNZSkdl
+MUVsSEp6d2kKalQ5N1BKV0UvN25CRzdVYUtSWUZ0WE1qc3h4NHd0Zk1xWlpCejhvWW50NTQ5MHNK
+QTNWdzBDQXFEWjk0ckF4UwpsbS9wcXczc2tjUmJzY1dTOVBLVzRVbW9ta3BYU1B4cnVRK3NqbFM0
+UjI3VUlVOWFDZzJ2QVVxM21KQXBBdVpwCkV3UHZ0TWhwWmxVTjJabnBsbFRSUFRhRDJaU1V6TlFJ
+Z2JQRVh2eEhGdGRMVVhLejlXc3RuM3NIdjJ4Snk4eXoKRjRUUkxVeGFyWk04UEEwY1B1cWJJUEdh
+WnA5czdIbXNKNlpQdTZYc1pPcnlHYURQQ1dVT3NVdk84dDUxb2V2aAorUkt2UjV4amJVbk5BL2xX
+T3hnRE00TFI4VExLdGoybFpBTjhiTHhCbHBuS1dHclZLYkNXRHZNNEc3K0J2cC9jCmoySVFJREFR
+QUJNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUNBUUFEeTZDTGIrQ2ZyQ29TZG5HSUwyTzBnZGNxQloK
+YzBBTHN1c0RxSHhzR1pPTUNVZE82aGdJY3NFVmt2YmxPZ1R4T3VlL2E1WlpxcEVVNk5EN3NHbDRy
+c0RZQVVBSAordHBNSWRGcGNObk5iRFRDLy9vUTJkaWIycE5PTGtaQnBBS1NtSlpMa0FhRjhTU2Jx
+aWkxZElWMng1ZTNvWkVHCk5JQ2MzU1Fpc0pyaVo0U2dCdCttRU02aWxKWkNTcVl3Y3ZkQlRrOVFn
+b1JLbFZQQWpTTkJVMk1mYmlodm0zb0kKYXg5a2swMk5ta1FPOXhiMUxzMmZJbVZNSy83NlFzQ1h3
+REZySG9VNU1qUERKcjJLbWQ4UFYzKzZiVUkvbm9ZVgp2bTJsdlBsS3AxOFBVdk5WbFhiN1RRM1Iy
+NXI0cU0xWVZ3eEpZUlFFOFdlV1NPRVlHZWhBTUQrNk90S01Wd21aCjdYaENoRUxqRUFMeFp5djlz
+RmM3N0FyMi9oY2g5aThTbWhHU2JkQ3RHdU40OFFqdkNha0tMQURUZmZCclgySysKSTlDa1BxWFB0
+TUtzSGp2aWJxWGY0TmZBNkJNeEZYTE1XYWpsRjNLT1ZreEp4WUpuWk1mZ3djaGlUaVVIcHVOSQpU
+cUtBVSthQ0I2TjYzSDIvSFQ3aWo3U3VCa2Y2U1BWbE9Ga2tpUnpwdFcxdUZFRGgwaGlhK1lBVDRB
+U0VQSE0xCjRGcUhoRHFPb2t2ZFdoVUVOMnRYYWNNTk1OUTcxU3hnK3lua01NRjZiV3o3MkxrK0RE
+MlAxZ3BmSmtPL0RQdEoKcVo3d0poUTg3RjNFbFVaQVp6UEs1SjdtK3F6WFlaa3o1d2tHNHRQNGl4
+NWJzUmhWUDgrMVhMMWluV05RTnhqQwp3MmE0VmlLelBtR3UyZEtyd3dJb2wyTUdOUVhFZmNyam9l
+Q3pBVUdWMklMSThBOEpzZHQ0PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t
+			</data>
+		</dict>
+	</array>
+
+	<!-- ==================================================== -->
+	<!-- КОРНЕВЫЕ ПАРАМЕТРЫ ПРОФИЛЯ (БЕЗ TargetDeviceModel) -->
+	<!-- ==================================================== -->
+	<key>PayloadDisplayName</key>
+	<string>FF AimLock AntiBan FIXED v3 (iPhone 12)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.aimlock.ff.iphone12.fixedv3</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>F6666666-6666-6666-6666-666666666666</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadDescription</key>
+	<string>AimLock Configuration for Free Fire. AntiBan Protection. iPhone 12 Only. Certificate error fixed.</string>
+	<key>PayloadOrganization</key>
+	<string>FF AimLock Solutions</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>ConsentText</key>
+	<dict>
+		<key>default</key>
+		<string>This profile configures AimLock for Free Fire. It includes touch optimizations, GPU settings, VPN anti-ban protection, and a security certificate. Install only on iPhone 12.</string>
+	</dict>
+</dict>
+</plist>
